@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserItem from "./components/UserItem";
-import "./App.css";
+import { AppContainer } from "./App.jsx";
 
 function App() {
   // se seteaza state-ul initial al aplicatiei si functia de resetare a state-ului
@@ -13,7 +13,7 @@ function App() {
       .then((json) => setUser(json));
   }, []);
   return (
-    <div className="App">
+    <AppContainer>
       {users.map((user, index) => {
         return (
           <UserItem
@@ -24,7 +24,7 @@ function App() {
           />
         );
       })}
-    </div>
+    </AppContainer>
   );
 }
 
